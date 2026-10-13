@@ -86,3 +86,62 @@ mobileScreen.addEventListener("change", updateNavigation);
 
 // Keep the footer year current.
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Fade elements into view once as the visitor scrolls.
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+);
+
+if (
+  "IntersectionObserver" in window &&
+  !reducedMotion.matches
+) {
+  const revealElements = document.querySelectorAll(
+    [
+      ".hero > div",
+      ".terminal",
+      ".perspective-card",
+      ".section-heading",
+      ".project-card",
+      ".about-grid > div",
+      ".skill-card",
+      ".contact-card"
+    ].join(",")
+  );
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.remove("reveal-pending");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0,
+      rootMargin: "0px 0px -35px 0px"
+    }
+  );
+
+  revealElements.forEach((element) => {
+    const bounds = element.getBoundingClientRect();
+
+    // Keep content already on screen visible.
+    if (bounds.top < window.innerHeight) return;
+
+    element.classList.add("scroll-reveal", "reveal-pending");
+    revealObserver.observe(element);
+  });
+
+  // Reveal everything if reduced motion is enabled later.
+  reducedMotion.addEventListener("change", (event) => {
+    if (!event.matches) return;
+
+    revealObserver.disconnect();
+
+    revealElements.forEach((element) => {
+      element.classList.remove("reveal-pending");
+    });
+  });
+}
