@@ -925,45 +925,107 @@ p {
 /* MY PERSPECTIVE ON IT */
 
 .perspective-section {
-  padding-block: 20px;
+  padding-block: 30px;
 }
 
 .perspective-card {
-  padding: clamp(24px, 5vw, 56px);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--cyan);
-  border-radius: var(--radius);
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: clamp(28px, 5vw, 64px);
+  overflow: hidden;
+  border: 1px solid rgba(141, 124, 255, 0.4);
+  border-radius: 28px;
   background:
-    linear-gradient(
-      135deg,
-      rgba(141, 124, 255, 0.12),
-      rgba(99, 230, 255, 0.04)
+    radial-gradient(
+      ellipse at top right,
+      rgba(141, 124, 255, 0.16),
+      transparent 65%
     ),
-    var(--panel);
+    linear-gradient(135deg, #21152f, #151021);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.perspective-card h2 {
-  margin-bottom: 24px;
-  color: var(--cyan);
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  letter-spacing: -0.02em;
+/* A second border creates an inset frame. */
+.perspective-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: -1;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.perspective-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.perspective-line {
+  width: 36px;
+  height: 2px;
+  flex-shrink: 0;
+  background: var(--pink);
+}
+
+.perspective-heading h2 {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.perspective-mark {
+  position: absolute;
+  top: 48px;
+  right: clamp(24px, 5vw, 64px);
+  z-index: -1;
+  color: rgba(141, 124, 255, 0.13);
+  font-family: Georgia, serif;
+  font-size: clamp(9rem, 20vw, 17rem);
+  line-height: 1;
+  pointer-events: none;
 }
 
 .perspective-quote {
-  max-width: 52ch;
+  max-width: 850px;
   margin: 0;
 }
 
 .perspective-quote p {
   margin: 0;
   color: var(--text);
-  font-size: clamp(1.2rem, 2.5vw, 1.9rem);
-  font-weight: 500;
-  line-height: 1.6;
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.015em;
+}
+
+.perspective-quote strong {
+  color: #b9adff;
+  font-weight: 650;
 }
 
 .perspective-author {
-  margin: 24px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 32px;
   color: var(--muted);
   font-size: 0.95rem;
+}
+
+.perspective-author-line {
+  width: 28px;
+  height: 1px;
+  flex-shrink: 0;
+  background: var(--pink);
 }
