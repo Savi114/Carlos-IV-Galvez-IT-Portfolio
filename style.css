@@ -1143,3 +1143,66 @@ body {
     transition: none;
   }
 }
+
+/* IMAGE VIEWER */
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 64px 20px 24px;
+  border: 0;
+  background: transparent;
+}
+
+.image-viewer[open] {
+  display: grid;
+  place-items: center;
+}
+
+.image-viewer::backdrop {
+  background: rgba(8, 5, 16, 0.94);
+}
+
+.image-viewer img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 88px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.image-viewer-close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: #241a34;
+  color: var(--text);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-viewer-close:hover {
+  background: #38264b;
+}
+
+.screenshot > a {
+  cursor: zoom-in;
+}
+
+html.image-viewer-open {
+  overflow: hidden;
+}
