@@ -921,3 +921,49 @@ p {
     scroll-behavior: smooth;
   }
 }
+
+/* MY PERSPECTIVE ON IT */
+
+.perspective-section {
+  padding-block: 20px;
+}
+
+.perspective-card {
+  padding: clamp(24px, 5vw, 56px);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--cyan);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(141, 124, 255, 0.12),
+      rgba(99, 230, 255, 0.04)
+    ),
+    var(--panel);
+}
+
+.perspective-card h2 {
+  margin-bottom: 24px;
+  color: var(--cyan);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.02em;
+}
+
+.perspective-quote {
+  max-width: 52ch;
+  margin: 0;
+}
+
+.perspective-quote p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(1.2rem, 2.5vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.perspective-author {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
