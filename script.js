@@ -145,3 +145,61 @@ if (
     });
   });
 }
+
+// Open linked screenshots in an overlay on the current page.
+const imageViewer = document.getElementById("image-viewer");
+const imageViewerImage = document.getElementById("image-viewer-img");
+
+if (imageViewer && typeof imageViewer.showModal === "function") {
+  const closeImageViewer = () => imageViewer.close();
+
+  document.querySelectorAll(".screenshot > a").forEach((link) => {
+    const screenshot = link.querySelector("img");
+
+    if (!screenshot) return;
+
+    link.removeAttribute("target");
+    link.setAttribute(
+      "aria-label",
+      `Enlarge image: ${screenshot.alt || "Project screenshot"}`
+    );
+    link.setAttribute("aria-haspopup", "dialog");
+
+    link.addEventListener("click", (event) => {
+      // Preserve normal behaviour for modified clicks.
+      if (
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+
+      imageViewerImage.src = link.href;
+      imageViewerImage.alt = screenshot.alt;
+
+      imageViewer.showModal();
+      document.documentElement.classList.add("image-viewer-open");
+    });
+  });
+
+  imageViewer
+    .querySelector(".image-viewer-close")
+    .addEventListener("click", closeImageViewer);
+
+  imageViewer.addEventListener("click", (event) => {
+    if (event.target === imageViewer) {
+      closeImageViewer();
+    }
+  });
+
+  // Runs when closed by the button, background, or Escape.
+  imageViewer.addEventListener("close", () => {
+    document.documentElement.classList.remove("image-viewer-open");
+    imageViewerImage.removeAttribute("src");
+    imageViewerImage.alt = "";
+  });
+}
