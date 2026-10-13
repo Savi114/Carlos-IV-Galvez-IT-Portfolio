@@ -572,7 +572,7 @@ p {
 /* ON-GOING PROJECTS */
 
 .ongoing-grid {
-  align-items: stretch;
+  align-items: start;
 }
 
 .project-topline {
