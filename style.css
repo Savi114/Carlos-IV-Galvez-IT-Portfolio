@@ -974,3 +974,143 @@ p {
     scroll-behavior: smooth;
   }
 }
+
+/* ANIMATED DATA NETWORKS */
+
+.data-networks {
+  position: fixed;
+  inset: 85px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Keep the page content above the decoration. */
+main,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+
+.data-network {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: min(280px, calc((100vw - 1240px) / 2 - 24px));
+  color: var(--violet);
+  opacity: 0.65;
+
+  /* Fade the network at the top and bottom. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+.data-network-left {
+  left: 12px;
+}
+
+.data-network-right {
+  right: 12px;
+  color: var(--cyan);
+  transform: scaleX(-1);
+}
+
+.network-connections,
+.network-signals {
+  fill: none;
+}
+
+.network-connections path {
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-opacity: 0.22;
+  vector-effect: non-scaling-stroke;
+}
+
+.network-signals path {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-opacity: 0.8;
+  stroke-dasharray: 12 220;
+  vector-effect: non-scaling-stroke;
+}
+
+.network-nodes circle {
+  fill: currentColor;
+  opacity: 0.45;
+}
+
+/* Enable motion only when the visitor allows it. */
+@media (prefers-reduced-motion: no-preference) {
+  .network-signals path {
+    animation: transmit-data 9s linear infinite;
+  }
+
+  .network-signals path:nth-child(2) {
+    animation-duration: 12s;
+    animation-delay: -4s;
+  }
+
+  .network-signals path:nth-child(3) {
+    animation-duration: 8s;
+    animation-delay: -6s;
+  }
+
+  .data-network-right .network-signals path {
+    animation-direction: reverse;
+  }
+
+  .network-nodes circle {
+    animation: network-pulse 6s ease-in-out infinite;
+  }
+
+  .network-nodes circle:nth-child(3n) {
+    animation-delay: -2s;
+  }
+
+  .network-nodes circle:nth-child(3n + 1) {
+    animation-delay: -4s;
+  }
+}
+
+@keyframes transmit-data {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -464;
+  }
+}
+
+@keyframes network-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.75;
+  }
+}
+
+/* Hide the networks when the side margins are narrow. */
+@media (max-width: 1400px) {
+  .data-networks {
+    display: none;
+  }
+}
