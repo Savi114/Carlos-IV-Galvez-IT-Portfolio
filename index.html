@@ -597,78 +597,229 @@
       <div class="project-grid ongoing-grid">
 
         <!-- ZODIARY -->
-        <article class="project-card" aria-labelledby="zodiary-title">
-          <div class="project-info">
-            <div class="project-topline">
-              <img
-                class="project-icon"
-                src="images/Java.png"
-                alt="Java"
-                width="72"
-                height="72"
-                loading="lazy"
-                decoding="async"
-              >
+<!-- ZODIARY -->
+<article class="project-card" aria-labelledby="zodiary-title">
+  <figure class="screenshot">
+    <a
+      href="images/Zodiary_Output.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open Zodiary observation comparison screenshot in a new tab"
+    >
+      <img
+        src="images/Zodiary_Output.png"
+        alt="Zodiary comparing Venus observations in Berlin, showing dates, longitude, zodiac sector, season, and movement."
+        loading="lazy"
+        decoding="async"
+      >
+    </a>
 
-              <p class="status-badge">
-                <span aria-hidden="true">●</span>
-                Status: Beginning
-              </p>
-            </div>
+    <figcaption>
+      <strong>Comparing astronomical observations</strong>
+      The console displays two Venus observations from Berlin,
+      calculates their longitude difference, and identifies
+      direct movement. The run ends normally after the user
+      chooses not to make another comparison.
+    </figcaption>
+  </figure>
 
-            <p class="eyebrow">Java course project</p>
-            <h3 id="zodiary-title">Zodiary</h3>
+  <div class="project-info">
+    <div class="project-topline">
+      <img
+        class="project-icon"
+        src="images/Java.png"
+        alt="Java"
+        width="72"
+        height="72"
+        loading="lazy"
+        decoding="async"
+      >
 
-            <p class="muted">
-              A Java application being developed to explore
-              astronomical observations. The project focuses on
-              organising information through classes and objects,
-              with inheritance and polymorphism as development goals.
-            </p>
+      <p class="status-badge">
+        <span aria-hidden="true">●</span>
+        Status: Final testing &amp; documentation
+      </p>
+    </div>
 
-            <ul class="technology-list" aria-label="Zodiary technologies">
-              <li>
-                <img
-                  src="images/Java.png"
-                  alt=""
-                  width="28"
-                  height="28"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <span>Java</span>
-              </li>
-              <li><span>Object-oriented programming</span></li>
-              <li>
-                <img
-                  src="images/IntelliJ.png"
-                  alt=""
-                  width="28"
-                  height="28"
-                  loading="lazy"
-                  decoding="async"
-                >
-                <span>IntelliJ IDEA</span>
-              </li>
-            </ul>
+    <p class="eyebrow">Java console application</p>
+    <h3 id="zodiary-title">Zodiary</h3>
 
-            <details class="disclosure">
-              <summary>Project goals</summary>
+    <p class="muted">
+      A Java application that loads astronomical observations
+      from CSV files and compares a planet’s position across
+      two dates. Users choose Jupiter, Mars, Saturn, or Venus
+      and a location: Berlin or Buenos Aires. Results include
+      the zodiac sector, season, and direction of movement.
+    </p>
 
-              <div class="disclosure-content">
-                <ul class="goal-list">
-                  <li>Represent observations using Java classes.</li>
-                  <li>Organise astronomical data within the application.</li>
-                  <li>Practise inheritance and polymorphism.</li>
-                </ul>
-              </div>
-            </details>
+    <ul class="technology-list" aria-label="Zodiary technologies">
+      <li>
+        <img
+          src="images/Java.png"
+          alt=""
+          width="28"
+          height="28"
+          loading="lazy"
+          decoding="async"
+        >
+        <span>Java</span>
+      </li>
 
-            <p class="documentation-note">
-              Photo documentation coming soon.
-            </p>
-          </div>
-        </article>
+      <li><span>Object-oriented programming</span></li>
+      <li><span>CSV file handling</span></li>
+      <li><span>Input validation</span></li>
+
+      <li>
+        <img
+          src="images/IntelliJ.png"
+          alt=""
+          width="28"
+          height="28"
+          loading="lazy"
+          decoding="async"
+        >
+        <span>IntelliJ IDEA</span>
+      </li>
+    </ul>
+
+    <details class="disclosure">
+      <summary>Explore features and screenshots</summary>
+
+      <div class="disclosure-content">
+        <h4>My contribution</h4>
+
+        <p>
+          Developed the Java classes, CSV loading, console
+          interaction, observation comparison, and input
+          validation. Used inheritance and method overriding
+          to represent different planets through a shared
+          parent class.
+        </p>
+
+        <figure class="screenshot">
+          <a
+            href="images/Zodiary_Inheritance.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Zodiary inheritance code screenshot in a new tab"
+          >
+            <img
+              src="images/Zodiary_Inheritance.png"
+              alt="Venus extends the Planet class, calls its constructor, and overrides the getDescription method."
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <figcaption>
+            <strong>Inheritance and method overriding</strong>
+            The Venus class inherits from Planet, supplies its
+            name through the parent constructor, and overrides
+            getDescription() with its own description.
+          </figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <a
+            href="images/Zodiary_CSV.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Zodiary CSV loading screenshot in a new tab"
+          >
+            <img
+              src="images/Zodiary_CSV.png"
+              alt="CSV loading test reporting 124 Berlin observations and 124 Buenos Aires observations, totalling 248."
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <figcaption>
+            <strong>Loading observation data</strong>
+            A loading test reports 124 observations from each
+            location, giving 248 in total. Sample output shows
+            the planet, date, location, hemisphere, and longitude.
+          </figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <a
+            href="images/Zodiary_Validation.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Zodiary date validation screenshot in a new tab"
+          >
+            <img
+              src="images/Zodiary_Validation.png"
+              alt="Zodiary rejecting an incorrect date format, an impossible calendar date, and later dates that are not after the first date."
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <figcaption>
+            <strong>Guiding users through incorrect input</strong>
+            The application rejects incorrect date formats,
+            impossible calendar dates, and a second date that
+            is equal to or earlier than the first. Each message
+            explains the problem and asks the user to try again.
+          </figcaption>
+        </figure>
+
+        <figure class="screenshot">
+          <a
+            href="images/Zodiary_Tests.png"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open Zodiary calculation test results in a new tab"
+          >
+            <img
+              src="images/Zodiary_Tests.png"
+              alt="Nine passing calculation tests covering zodiac boundaries, hemisphere seasons, longitude wraparound, and unchanged longitude."
+              loading="lazy"
+              decoding="async"
+            >
+          </a>
+
+          <figcaption>
+            <strong>Checking calculation boundaries</strong>
+            The recorded test run passes nine checks covering
+            zodiac sector boundaries, seasons in both hemispheres,
+            longitude changes across 0° and 360°, and equal
+            longitudes.
+          </figcaption>
+        </figure>
+
+        <h4>What I learned</h4>
+
+        <p>
+          Connecting Java classes into a working application,
+          handling CSV data, validating console input, and
+          testing boundary cases rather than only typical inputs.
+        </p>
+
+        <h4>Current scope</h4>
+
+        <p>
+          Zodiary works with the observations available in its
+          supplied CSV files. It compares recorded positions;
+          it does not retrieve live astronomical data.
+        </p>
+      </div>
+    </details>
+
+    <div class="actions">
+      <a
+        class="button primary"
+        href="https://github.com/Savi114/Zodiary"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View code on GitHub ↗
+      </a>
+    </div>
+  </div>
+</article>
 
         <!-- JUNKYARD -->
         <article class="project-card" aria-labelledby="junkyard-title">
