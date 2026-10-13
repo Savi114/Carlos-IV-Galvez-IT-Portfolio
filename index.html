@@ -12,134 +12,8 @@
   >
   <meta name="theme-color" content="#120b1f">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261013-perspective">
   <script src="script.js" defer></script>
-
-  <style>
-    /* ABOUT ME — CHAT CARD */
-
-    .about-chat {
-      min-width: 0;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: #1b1528;
-      box-shadow: 0 20px 50px #00000025;
-    }
-
-    .about-chat-header {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border);
-      background: #ffffff03;
-      color: var(--text);
-      font-size: 0.8rem;
-      font-weight: 650;
-    }
-
-    .about-chat-indicator {
-      width: 8px;
-      height: 8px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: var(--cyan);
-    }
-
-    .about-chat-label {
-      margin-left: auto;
-      color: var(--muted);
-      font-size: 0.7rem;
-      font-weight: 400;
-    }
-
-    .about-chat-body {
-      padding: 28px;
-    }
-
-    .about-chat-prompt {
-      width: fit-content;
-      max-width: 92%;
-      margin: 0 0 30px auto;
-      padding: 16px 20px;
-      border: 1px solid #8d7cff35;
-      border-radius: 20px 20px 5px 20px;
-      background: #342842;
-    }
-
-    .about-chat-speaker {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--cyan);
-      font-size: 0.7rem;
-      font-weight: 700;
-    }
-
-    .about-chat-prompt p {
-      margin: 0;
-      color: var(--text);
-      font-size: 0.94rem;
-      line-height: 1.6;
-    }
-
-    .about-chat-author {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      color: var(--text);
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .about-chat-avatar {
-      display: grid;
-      place-items: center;
-      width: 32px;
-      height: 32px;
-      flex-shrink: 0;
-      border: 1px solid #63e6ff35;
-      border-radius: 10px;
-      background: #63e6ff12;
-      color: var(--cyan);
-      font-size: 1.2rem;
-    }
-
-    .about-chat-response p {
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      line-height: 1.85;
-    }
-
-    .about-chat-response .text-link {
-      display: inline-block;
-      margin-top: 6px;
-    }
-
-    /* CERTIFICATES */
-
-    #certificates .screenshot {
-      background: white;
-    }
-
-    @media (max-width: 760px) {
-      .about-chat-header {
-        padding: 16px 20px;
-      }
-
-      .about-chat-body {
-        padding: 22px;
-      }
-
-      .about-chat-prompt {
-        max-width: 100%;
-        padding: 14px 17px;
-      }
-    }
-  </style>
 </head>
 
 <body id="top">
@@ -252,38 +126,32 @@
       </aside>
     </section>
 
-<!-- MY PERSPECTIVE ON IT -->
-<section
-  id="perspective"
-  class="container perspective-section"
-  aria-labelledby="perspective-title"
->
-  <figure class="perspective-card">
-    <div class="perspective-heading">
-      <span class="perspective-line" aria-hidden="true"></span>
-      <h2 id="perspective-title">My perspective on IT</h2>
-    </div>
-
-    <span class="perspective-mark" aria-hidden="true">“</span>
+    <!-- MY PERSPECTIVE ON IT -->
+    <section
+      id="perspective"
+      class="container perspective-section"
+      aria-labelledby="perspective-title"
+    >
+      <figure class="perspective-card">
+        <h2 id="perspective-title">My perspective on IT</h2>
 
         <blockquote class="perspective-quote">
-                  <p>
-                    “I see IT as a <strong>continuous work in progress.</strong>
-                    No matter how complete a project looks, it remains a work
-                    in progress until its developer or the person it was built
-                    for is satisfied. Even then, there is always something to
-                    <strong>learn, improve, or adapt</strong> as technology and
-                    people’s needs change.”
-                  </p>
-                </blockquote>
+          <p>
+            “I see IT as a <strong>continuous work in progress.</strong>
+            No matter how complete a project looks, it remains a work
+            in progress until its developer or the person it was built
+            for is satisfied. Even then, there is always something to
+            <strong>learn, improve, or adapt</strong> as technology and
+            people’s needs change.”
+          </p>
+        </blockquote>
 
-              <figcaption class="perspective-author">
-            <span class="perspective-author-line" aria-hidden="true"></span>
-          Carlos B. Galvez IV
+        <figcaption class="perspective-author">
+          — Carlos B. Galvez IV
         </figcaption>
       </figure>
     </section>
-    
+
     <!-- FINISHED PROJECTS -->
     <section
       id="projects"
@@ -334,18 +202,36 @@
 
             <ul class="technology-list" aria-label="CBGrid technologies">
               <li>
-                <img src="images/HTML_5.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/HTML_5.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>HTML</span>
               </li>
               <li>
-                <img src="images/CSS.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/CSS.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>CSS</span>
               </li>
               <li>
-                <img src="images/Java_Script.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/Java_Script.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>JavaScript</span>
               </li>
               <li><span>PWA</span></li>
@@ -483,23 +369,47 @@
 
             <ul class="technology-list" aria-label="Indigo technologies">
               <li>
-                <img src="images/HTML_5.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/HTML_5.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>HTML</span>
               </li>
               <li>
-                <img src="images/CSS.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/CSS.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>CSS</span>
               </li>
               <li>
-                <img src="images/Java_Script.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/Java_Script.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>JavaScript</span>
               </li>
               <li>
-                <img src="images/Github.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/Github.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>GitHub Pages</span>
               </li>
             </ul>
@@ -643,14 +553,26 @@
 
             <ul class="technology-list" aria-label="Zodiary technologies">
               <li>
-                <img src="images/Java.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/Java.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>Java</span>
               </li>
               <li><span>Object-oriented programming</span></li>
               <li>
-                <img src="images/IntelliJ.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/IntelliJ.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>IntelliJ IDEA</span>
               </li>
             </ul>
@@ -705,8 +627,14 @@
 
             <ul class="technology-list" aria-label="Junkyard technologies">
               <li>
-                <img src="images/Unix.png" alt="" width="28" height="28"
-                  loading="lazy" decoding="async">
+                <img
+                  src="images/Unix.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                  loading="lazy"
+                  decoding="async"
+                >
                 <span>Linux / UNIX</span>
               </li>
               <li><span>Bash</span></li>
@@ -902,18 +830,36 @@
 
           <ul class="tool-grid" aria-label="Web development technologies">
             <li>
-              <img src="images/HTML_5.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/HTML_5.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>HTML</span>
             </li>
             <li>
-              <img src="images/CSS.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/CSS.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>CSS</span>
             </li>
             <li>
-              <img src="images/Java_Script.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Java_Script.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>JavaScript</span>
             </li>
           </ul>
@@ -931,18 +877,36 @@
 
           <ul class="tool-grid" aria-label="Programming and systems">
             <li>
-              <img src="images/Java.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Java.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>Java</span>
             </li>
             <li>
-              <img src="images/Python.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Python.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>Python</span>
             </li>
             <li>
-              <img src="images/Unix.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Unix.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>Linux / UNIX</span>
             </li>
           </ul>
@@ -960,18 +924,36 @@
 
           <ul class="tool-grid" aria-label="Development tools">
             <li>
-              <img src="images/Visual_Studio_Code.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Visual_Studio_Code.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>VS Code</span>
             </li>
             <li>
-              <img src="images/IntelliJ.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/IntelliJ.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>IntelliJ IDEA</span>
             </li>
             <li>
-              <img src="images/Github.png" alt="" width="60" height="60"
-                loading="lazy" decoding="async">
+              <img
+                src="images/Github.png"
+                alt=""
+                width="60"
+                height="60"
+                loading="lazy"
+                decoding="async"
+              >
               <span>GitHub</span>
             </li>
           </ul>
