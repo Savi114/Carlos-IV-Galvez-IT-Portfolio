@@ -1114,3 +1114,32 @@ main,
     display: none;
   }
 }
+
+/* MAKE THE NETWORKS SCROLL WITH THE PAGE */
+
+body {
+  position: relative;
+}
+
+.data-networks {
+  position: absolute;
+}
+
+/* FADE CONTENT INTO VIEW */
+
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-reveal {
+    transition: opacity 0.8s ease;
+  }
+
+  .scroll-reveal.reveal-pending {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transition: none;
+  }
+}
