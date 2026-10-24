@@ -2,7 +2,6 @@
 
 :root {
   color-scheme: dark;
-
   --bg: #120b1f;
   --text: #fff7ff;
   --muted: #d7c7e8;
@@ -499,6 +498,56 @@ main,
   line-height: 1.65;
 }
 
+.card-actions {
+  margin: 0 0 22px;
+}
+
+/* FEATURED PROJECT */
+
+.project-card-featured {
+  grid-column: 1 / -1;
+  border-color: #8d7cff60;
+}
+
+.project-card-featured .project-info {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  column-gap: 32px;
+  align-items: start;
+}
+
+.project-card-featured .project-info >
+:not(.featured-preview):not(.disclosure) {
+  grid-column: 1;
+}
+
+.project-card-featured .disclosure {
+  grid-column: 1 / -1;
+}
+
+.featured-preview {
+  grid-column: 2;
+  grid-row: 1 / 6;
+  min-width: 0;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #100d18;
+  cursor: zoom-in;
+}
+
+.featured-preview img {
+  width: 100%;
+}
+
+.featured-preview span {
+  display: block;
+  padding: 12px 16px;
+  color: var(--cyan);
+  font-size: 0.8rem;
+}
+
 /* TECHNOLOGY LABELS */
 
 .technology-list {
@@ -571,6 +620,7 @@ main,
 /* EXPANDABLE PROJECT INFORMATION */
 
 .disclosure {
+  min-width: 0;
   margin: 0;
 }
 
@@ -633,7 +683,7 @@ main,
   color: var(--text);
 }
 
-.disclosure-content .screenshot {
+.disclosure-content > .screenshot {
   overflow: hidden;
   margin-block: 24px;
   border: 1px solid var(--border);
@@ -646,6 +696,113 @@ main,
 
 .disclosure-content > .actions {
   margin-bottom: 16px;
+}
+
+/* SCREENSHOT GALLERIES */
+
+.project-gallery {
+  min-width: 0;
+  max-width: 900px;
+  margin: 24px auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #100d1880;
+}
+
+.gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-header > p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.gallery-controls,
+.viewer-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.gallery-count {
+  min-width: 42px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.gallery-arrow {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #2a203b;
+  color: var(--text);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.gallery-arrow:hover {
+  border-color: var(--violet);
+  background: #403053;
+}
+
+.project-gallery .screenshot {
+  margin: 0;
+}
+
+.project-gallery .screenshot img {
+  max-height: 560px;
+  object-fit: contain;
+}
+
+.gallery-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.gallery-thumbnail {
+  flex: 0 0 84px;
+  height: 62px;
+  padding: 4px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #ffffff0a;
+  cursor: pointer;
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-thumbnail:hover {
+  border-color: var(--violet);
+}
+
+.gallery-thumbnail[aria-pressed="true"] {
+  border-color: var(--cyan);
+  background: #63e6ff16;
 }
 
 /* PROJECT NOTES */
@@ -1002,13 +1159,15 @@ main,
   height: 100%;
   max-height: none;
   margin: 0;
-  padding: 64px 20px 24px;
+  padding: 64px 20px 20px;
   border: 0;
   background: transparent;
 }
 
 .image-viewer[open] {
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 16px;
   place-items: center;
 }
 
@@ -1020,7 +1179,7 @@ main,
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(100dvh - 88px);
+  max-height: calc(100dvh - 160px);
   object-fit: contain;
   border-radius: 12px;
 }
@@ -1045,6 +1204,20 @@ main,
 
 .image-viewer-close:hover {
   background: #38264b;
+}
+
+.viewer-controls {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background: #1b1528;
+  color: var(--text);
+}
+
+#viewer-count {
+  min-width: 64px;
+  margin: 0;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 html.image-viewer-open {
@@ -1139,6 +1312,15 @@ html.image-viewer-open {
 
   .project-info {
     padding: 24px;
+  }
+
+  .project-card-featured .project-info {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .featured-preview {
+    grid-column: 1;
+    grid-row: auto;
   }
 
   .about-chat-header {
